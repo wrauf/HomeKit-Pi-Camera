@@ -1,15 +1,18 @@
 /***********************************Camera details***********************************************/
-var CameraName = "Node Camera";
+var CameraName = "Pi Camera";
+var CameraManufacturer = "Raspberry Pi";
+var CameraModel = "HD Camera Board V2";
+var CameraSerialNumber = "BGR2N67BHSEASF8812";
+var CameraFirmwareRevision = "1.0.0";
+
+var CameraUserName = "EC:22:3D:D3:CE:CE";
 var CameraPort = 51062;
 var CameraPinCOde = "031-45-154";
-var CameraUserName = "EC:22:3D:D3:CE:CE";
 
-
-var ResolutionWidth = 1920;
-var ResolutionHeight = 1080;
+var CameraResolutionWidth = 1920;
+var CameraResolutionHeight = 1080;
 var CameraFPS = 30;
 var CameraBitRate = 300;
-
 
 /***********************************Camera details***********************************************/
 
@@ -37,7 +40,15 @@ var cameraUUID = uuid.generate(CameraName);
 console.log(CameraName + " UUID is: " + cameraUUID);
 
 var cameraAccessory = new Accessory(CameraName, uuid.generate(CameraName));
-console.log(CameraName + " (accessory) initialized......");
+
+//set the charachteristics
+cameraAccessory
+  .getService(Service.AccessoryInformation)
+  .setCharacteristic(Characteristic.Manufacturer, CameraManufacturer)
+  .setCharacteristic(Characteristic.Model, CameraModel)
+  .setCharacteristic(Characteristic.SerialNumber, CameraSerialNumber)
+  .setCharacteristic(Characteristic.FirmwareRevision, CameraFirmwareRevision);
+console.log(CameraName + " (camera accessory) initialized......");
 
 //create a camera
 var cameraSource = new Camera();
@@ -66,8 +77,8 @@ Camera.prototype.handleStreamRequest = function (request) {
     if (requestType == "start") {
       var sessionInfo = this.pendingSessions[sessionIdentifier];
       if (sessionInfo) {
-        var width = ResolutionWidth;
-        var height = ResolutionHeight;
+        var width = CameraResolutionWidth;
+        var height = CameraResolutionHeight;
         var fps = CameraFPS;
         var bitrate = CameraBitRate;
 
