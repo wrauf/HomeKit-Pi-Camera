@@ -1,22 +1,22 @@
 {
-  "name": "homekitcam",
+  "name": "HomeKit-Pi-Camera",
   "version": "1.0.0",
   "description": "A project to make a Raspberry Pi driven, HomeKit Enabled camera.",
-  "main": "index.js",
+  "main": "PiCamera.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "install": "rsync -r ./node_modules/hap-nodejs/lib/res/ ./snapshots/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Didel/HomeKitCam.git"
+    "url": "git+https://github.com/wrauf/HomeKit-Pi-Camera.git"
   },
-  "author": "Dimiter Geelen",
+  "author": "Waqas Rauf",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Didel/HomeKitCam/issues"
+    "url": "https://github.com/wrauf/HomeKit-Pi-Camera/issues"
   },
-  "homepage": "https://github.com/Didel/HomeKitCam#readme",
+  "homepage": "https://github.com/wrauf/HomeKit-Pi-Camera#readme",
   "dependencies": {
     "hap-nodejs": "^0.4.15",
     "shelljs": "^0.7.5"
