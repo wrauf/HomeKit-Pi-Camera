@@ -3,7 +3,7 @@ A project to make a Raspberry Pi driven, HomeKit Enabled camera.
 
 This project aims to make a simple DIY HomeKit enabled camera using only a Raspberry Pi and the Raspberry Camera Module.
 
-The software is based on the [HAP-NodeJS](https://github.com/KhaosT/HAP-NodeJS) HomeKit API by [KhaosT](https://github.com/KhaosT) and raspberrypi related code was forked from [Didel] (https://github.com/Didel). Special thanks to them both.
+The software is based on the [HAP-NodeJS](https://github.com/KhaosT/HAP-NodeJS) HomeKit API by [KhaosT](https://github.com/KhaosT) and raspberrypi related code was forked from [HomeKitCam](https://github.com/Didel/HomeKitCam) by [Didel] (https://github.com/Didel). Special thanks to them both.
 
 ## Requirements
 One of the aims of this project is to be as simple as possible. You will only need:
