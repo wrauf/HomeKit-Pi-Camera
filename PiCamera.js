@@ -19,7 +19,7 @@ var CameraBitRate = 300;
 
 //Camera details - END
 
-var storage = require("node-persist");
+var storage = require("hap-nodejs/node_modules/node-persist");
 var uuid = require("hap-nodejs").uuid;
 var Service = require("hap-nodejs").Service;
 var Characteristic = require("hap-nodejs").Characteristic;
@@ -40,7 +40,7 @@ console.log("Storage system initialized...");
 var cameraUUID = uuid.generate(CameraName);
 console.log(CameraName + " UUID is: " + cameraUUID);
 
-var cameraAccessory = new Accessory(CameraName, uuid.generate(CameraName));
+var cameraAccessory = new Accessory(CameraName, cameraUUID);
 
 //set the charachteristics
 cameraAccessory
@@ -94,7 +94,7 @@ Camera.prototype.handleStreamRequest = function (request) {
           }
 
           bitrate = videoInfo["max_bit_rate"];
-          console.log('bitrate: , bitrate);
+          console.log("bitrate: ", bitrate);
         }
 
         let targetAddress = sessionInfo["address"];
