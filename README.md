@@ -11,7 +11,11 @@ The software is based on the [HAP-NodeJS](https://github.com/KhaosT/HAP-NodeJS) 
 - A suitable usb power adapter to power the Pi
 
 ## Installation
-To install, clone the project into a folder. Then cd to that directory, and run npm install to install all the necessary packages.
+Prereqs:
+`$ sudo apt-get install libav-tools`
+
+
+To install, clone the project into a folder. Then cd to that directory, and run npm install to install all the necessary packages. You might also need to run npm install from `./node_modules/hap-nodejs/`
 
 ## Starting HomeKit-Pi-Camera
 The camera can be run by running the command: node PiCamera.js 
