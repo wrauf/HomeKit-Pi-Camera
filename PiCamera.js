@@ -56,7 +56,7 @@ var cameraSource = new Camera();
 
 // Snaphost request handler
 Camera.prototype.handleSnapshotRequest = function (request, callback) {
-  var raspistill = "raspistill -w ${request.width} -h ${request.height} -t 10 -o ./snapshots/snapshot.jpg";
+  var raspistill = `raspistill -w ${request.width} -h ${request.height} -t 10 -o ./snapshots/snapshot.jpg`;
 
   shell.exec(raspistill, function (code, stdout, stderr) {
     var snapshot = undefined;
